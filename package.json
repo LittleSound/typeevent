@@ -1,0 +1,16 @@
+{
+  "name": "event",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Rizumu <464388324@qq.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "ts-node index"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "ts-node": "^10.2.1"
+  }
+}
