@@ -1,3 +1,7 @@
+/**
+ * 测试用例
+ */
+
 import Events from './events'
 
 // 发送与接收
@@ -11,32 +15,40 @@ it('Send and receive', () => {
 
 // 移除事件监听
 it('Delete event on', () => {
-    let dummy1 = 0, dummy2 = 0
+    let dummy1 = 0, dummy2 = 0, dummy3
     const func = (val: number) => dummy1 = val
 
     Events.miao.on(func)
     Events.miao.on(val => dummy2 = val)
+    Events.wang.on(val => dummy3 = val)
 
     Events.miao.off(func)
 
     Events.miao.emit(1)
     expect(dummy1).toBe(0)
     expect(dummy2).toBe(1)
+
+    Events.wang.emit('233', 0)
+    expect(dummy3).toBe('233')
 })
 
 // 移除该事件的全部监听
 it('Delete all event on', () => {
-    let dummy1 = 0, dummy2 = 0
+    let dummy1 = 0, dummy2 = 0, dummy3
     const func = (val: number) => dummy1 = val
 
     Events.miao.on(func)
     Events.miao.on(val => dummy2 = val)
+    Events.wang.on(val => dummy3 = val)
 
     Events.miao.offAll()
 
     Events.miao.emit(1)
     expect(dummy1).toBe(0)
     expect(dummy2).toBe(0)
+    
+    Events.wang.emit('233', 0)
+    expect(dummy3).toBe('233')
 })
 
 // 一次性事件监听
