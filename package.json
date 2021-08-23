@@ -5,9 +5,12 @@
   "author": "Rizumu <464388324@qq.com>",
   "license": "MIT",
   "scripts": {
-    "test": "ts-node index"
+    "test": "jest"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.5",
     "typescript": "^4.3.5"
   },
   "dependencies": {
