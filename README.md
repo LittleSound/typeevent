@@ -1,11 +1,11 @@
 # TypeEvent
 
 ### 一个类型化的事件系统
-
+基于 TypeScript 语言和 es6 增加的 Proxy
 - 直接使用事件对象的键值对，而不是字符串去索引事件。
 
 - 编写 emit 和 on 方法参数时根据事件不同获取准确的参数类型校验和自动补全。
-
+- 可以全局查找特定事件的引用，代码逻辑一目了然
 
 
 ## 开始使用
@@ -35,9 +35,18 @@ export default EventControl<Events>()
 import Events from './events'
 
 Events.sent.on(txHash => {
+    // 无需再次声明为 string 类型
     console.log(txHash.toLocaleUpperCase())
 })
 
+Events.uploading.on(progress => {
+  console.log(`Progress: ${progress}%`)
+})
+
+Events.uploading.emit(50)
+// 打印: "Progress: 50%"
+Events.uploading.emit(100)
+// 打印: "Progress: 100%"
 Events.sent.emit('0xe60cc11b8de')
 // 打印: "0XE60CC11B8DE"
 
