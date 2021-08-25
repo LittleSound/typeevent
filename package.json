@@ -1,6 +1,6 @@
 {
   "name": "typeevent",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Rizumu <464388324@qq.com>",
   "license": "MIT",
   "description": "A typed event system, based on the TypeScript language and the es6 addition of Proxy",
