@@ -46,7 +46,7 @@ it('Delete all event on', () => {
     Events.miao.emit(1)
     expect(dummy1).toBe(0)
     expect(dummy2).toBe(0)
-    
+
     Events.wang.emit('233', 0)
     expect(dummy3).toBe('233')
 })
@@ -87,7 +87,7 @@ it('Cover protection', () => {
     const oldClicked = Events.clicked
     Events.updated.on(() => dummy++)
     try {
-        ;(Events.updated as any) = undefined
+        ; (Events.updated as any) = undefined
     } catch (err) {
         errObj = err
     }
