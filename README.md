@@ -9,12 +9,21 @@
 
 
 ## 开始使用
+### 安装
+npm:
+```
+npm install typeevent
+```
+yarn:
+```
+yarn add typeevent
+```
 
 ### 创建事件处理器
 
 ```typescript
 // event.js
-import { EventControl } from './EventControl'
+import { EventControl } from 'typeevent'
 
 // 在这里枚举需要会出现的事件，以及它们传递哪些参数
 interface Events extends EventControl {
