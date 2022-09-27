@@ -22,7 +22,7 @@ yarn add typeevent
 ### 创建事件处理器
 
 ```typescript
-// event.js
+// event.ts
 import { EventControl } from 'typeevent'
 
 // 在这里枚举需要会出现的事件，以及它们传递哪些参数
